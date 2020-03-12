@@ -11,3 +11,11 @@
     text-align: center;
 }
 @media (max-width: 767.98px) {#maPub{display: none;}}
+
+.my-scrollspy
+{
+    height: 500px;
+    position: sticky;
+    top: 5px;
+
+}
