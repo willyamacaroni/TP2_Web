@@ -5,6 +5,7 @@
 #monTitre
 {
     margin-bottom: 2%;
+    text-align: center;
 }
 #maPub
 {
@@ -14,8 +15,11 @@
 
 .my-scrollspy
 {
-    height: 500px;
     position: sticky;
     top: 5px;
-
+    padding-bottom: 50px;
+}
+#my-boutonsHeader
+{
+    text-align: center;
 }

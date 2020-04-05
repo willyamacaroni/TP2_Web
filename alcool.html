@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="content/assets/css/style.css">
 
   <title>Hello, world!</title>
 </head>
@@ -19,10 +19,47 @@
   <p id="nom"></p>
   <p id="date"></p>
   <div class="row my-container">
-    <div id="list-example" class="list-group col-4 my-scrollspy">
-      <a class="list-group-item list-group-item-action" href="#list-item-1">Homme</a>
-      <a class="list-group-item list-group-item-action" href="#list-item-2">Femme</a>
-      <a class="list-group-item list-group-item-action" href="#list-item-3">Situation particulière</a>
+    <div class="col-4 ">
+      <div id="list-example" class="list-group row-fluid my-scrollspy">
+        <a class="list-group-item list-group-item-action" href="#list-item-1">Homme</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-2">Femme</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-3">Situation particulière</a>
+      </div>
+      <div class="row-fluid">
+        <form method="POST" id="formAlcool">
+          <div>
+            <label for="nom">Nom : </label>
+            <input id="nom" type="text" name="nom" value="">
+          </div>
+          <div>
+            <label for="nom">Prenom : </label>
+            <input id="prenom" type="text" name="prenom" value="">
+          </div>
+          <div>
+            <input id="Homme" type="radio" name="sexe" value="Homme">
+            <label for="Homme">Homme</label>
+            <input id="Femme" type="radio" name="sexe" value="Femme">
+            <label for="Femme">Femme</label>
+            <input id="Autre" type="radio" name="sexe" value="Autre">
+            <label for="Autre">Autre</label>
+          </div>
+          <div>
+            <label for="dateNaissance">Date de naissance :</label>
+            <input id="dateNaissance" type="date" name="dateNaissance">
+          </div>
+            <label for="nbJours">Nombre de jours à analyser : </label>
+            <input id="nbJours" type="number" min="1" name="nbJours">
+
+          <div>
+            <label for="situationParticuliere">Avez-vous une situation particulière? </label>
+            <input id="situationParticuliere" type="checkbox" name="situationParticuliere">
+          </div>
+          <div>
+            <input id="submit" type="submit" value="soumettre le formulaire">
+          </div>
+          
+        </form>
+      </div>
     </div>
     <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example col-8">
       <h4 id="list-item-1">Homme</h4>
@@ -145,9 +182,8 @@
     </div>
   </div>
   <div>
-
   </div>
-  <script src="script1.js"></script>
+  <script src="content/assets/scripts/script1.js"></script>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
