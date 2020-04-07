@@ -16,11 +16,23 @@
 
 <body>
   <header>
-    <a class="sr-only sr-only-focusable" href="#contenuPrincipal">Aller au contenu principal</a>
+    <a class="sr-only sr-only-focusable" href="#contenuPrincipal">Contenu principal</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Accueil<span class="sr-only">(actuel)</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="alcool.html">Alcool</a>
+          <a class="nav-item nav-link" href="defi530.html">Défi 5/30</a>
+        </div>
+      </div>
+    </nav>
     <div class="jumbotron row">
       <div class="col">
-        <h1 id="monTitre">Défi Santé!</h1>
-        <p>Ce site web sert à partager deux outils ayant pour objectif la santé de la population</p>
+        <h1 class="monTitre">Défi Santé!</h1>
+        <p id="maDescription">Ce site web sert à partager deux outils ayant pour objectif la santé de la population</p>
         <div id="my-boutonsHeader">
           <a href="alcool.html" class="btn btn-primary">alcool</a>
           <a href="defi530.html" class="btn btn-info">Défis 5/30</a>
@@ -46,15 +58,137 @@
         </ul>
       </div>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Jour</th>
+                <th scope="col">Minutes d'exercise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>∞</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>∞</td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th scope="colgroup" colspan="2">Statistiques</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Moyenne de minutes d'exercice par jour</th>
+                <td>∞</td>
+              </tr>
+              <tr>
+                <th scope="row">Minimum de minute(s) d'exercice par jour</th>
+                <td>∞ <br> Recommandation : 30</td>
+              </tr>
+              <tr>
+                <th scope="row">Ratio des journées respectant le défi</th>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Jour</th>
+                <th scope="col">Fruits et légumes consommés</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>∞</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>∞</td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th scope="colgroup" colspan="2">Statistiques</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Moyenne de fruits et légumes consommés par jour</th>
+                <td>∞</td>
+              </tr>
+              <tr>
+                <th scope="row">Minimum de fruits et légumes consommés par jour</th>
+                <td>∞ <br> Recommandation : 30</td>
+              </tr>
+              <tr>
+                <th scope="row">Ratio des journées respectant le défi</th>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Jour</th>
+                <th scope="col">Breuvages alcoolisés consommés</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>∞</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>∞</td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th scope="colgroup" colspan="2">Statistiques</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Moyenne de breuvages alcoolisés consommés par jour</th>
+                <td>∞</td>
+              </tr>
+              <tr>
+                <th scope="row">Minimum de breuvages alcoolisés consommés par jour</th>
+                <td>∞ <br> Recommandation : 30</td>
+              </tr>
+              <tr>
+                <th scope="row">Ratio des journées respectant le défi</th>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <aside class="col-fluid" id="maPub">
       <a href="#"><img src="content/assets/images/pub.webp" alt="fausse_pub"></a>
     </aside>
   </main>
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Contactez moi à l'adresse suivante:</small>
+      <a href="mailto:willyam.arcand@gmail.com">willyam.arcand@gmail.com</a>
+    </div>
+  </footer>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
