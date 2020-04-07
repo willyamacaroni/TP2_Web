@@ -2,12 +2,12 @@
   margin-top: 2%;
 }
 
-#monTitre {
+.monTitre {
   margin-bottom: 2%;
   text-align: center;
 }
 
-#maPub {
+#maPub, #maDescription {
   text-align: center;
 }
 
@@ -24,6 +24,23 @@
 
 #my-boutonsHeader {
   text-align: center;
+}
+
+.table {
+  text-align: center;
+}
+
+.scrollspy {
+  height: 125px;
+  overflow: scroll;
+}
+
+body, html {
+  height: 100%;
+}
+
+main {
+  height: 80%;
 }
 
 /*# sourceMappingURL=style.css.map */
