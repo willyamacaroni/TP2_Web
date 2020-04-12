@@ -9,6 +9,10 @@ let consommations = [];
 let resultats = {};
 initialiser();
 
+/**
+ *
+ * Réinitialise le tableau de consommations, l'objet résultats, les alertes et la section "resultatsAlcool" à leur valeurs initiale.
+ */
 function initialiser () {
   consommations = [];
   resultats = {};
@@ -17,13 +21,17 @@ function initialiser () {
   resultatsAlcool.style.display = 'none';
 }
 
+/**
+ *
+ * Lance l'analyse
+ */
 function lancerAnalyse () {
   initialiser();
   const nbJoursAnalyser = parseInt(document.getElementById('form_nbJours').value);
   const nbPrompt = nbJoursAnalyser;
   if (nbPrompt) {
     for (let i = 0; i < nbPrompt; i++) {
-      let message = `nombre de consommations consomé. (jour ${i+1})`
+      let message = `nombre de consommations consomé. (jour ${i + 1})`
       consommations.push(parseInt(prompt(message)));
     }
   }
@@ -41,6 +49,10 @@ function lancerAnalyse () {
   affichageResultats();
 }
 
+/**
+ *
+ * Effectue les calculs et insère les résultats dans l'objet "résultats"
+ */
 function calculsResultats () {
   const nbJoursAnalyser = parseInt(document.getElementById('form_nbJours').value);
   resultats = {
@@ -60,21 +72,35 @@ function calculsResultats () {
   }
 }
 
+/**
+ * renvoie la somme d'un tableau
+ * @param {*} leTableau Le tableau dont on veut la somme
+ * @returns Le tableau qui a été envoyer en paramètre
+ */
 function somme (leTableau) {
   return leTableau.reduce((a, b) => a + b, 0);
 }
 
-function calculAge (dateString) {
-  var today = new Date();
-  var birthDate = new Date(dateString);
-  var age = today.getFullYear() - birthDate.getFullYear();
-  var m = today.getMonth() - birthDate.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+/**
+ *
+ * Calcul l'age à partir de la date de naissance
+ * @param {*} dateNaissance La date de naissance de la personne dont on veut connaitre l'âge
+ * @returns retourne un nombre qui est l'age de la personne
+ */
+function calculAge (dateNaissance) {
+  var ajd = new Date();
+  var age = ajd.getFullYear() - dateNaissance.getFullYear();
+  var m = ajd.getMonth() - dateNaissance.getMonth();
+  if (m < 0 || (m === 0 && ajd.getDate() < dateNaissance.getDate())) {
     age--;
   }
   return age;
 }
 
+/**
+ *détermine les recommandations d'éduc'alcool dépendamment du sexe de la personne
+ *
+ */
 function recommandations () {
   if (resultats.sexe === 'Homme') {
     resultats.recommandationJour = 3;
@@ -85,6 +111,11 @@ function recommandations () {
   }
 }
 
+/**
+ *
+ * Détermine le nombre de jours sans alcool et fait une moyenne pour le nombre de jours total.
+ * @param {*} leTableau Le tableau de consommations remplis lors du chargement de la page.
+ */
 function calculRatioSansAlcool (leTableau) {
   let joursSansAlcool = 0
   for (let i = 0; i < consommations.length; i++) {
@@ -96,6 +127,12 @@ function calculRatioSansAlcool (leTableau) {
   resultats.ratioJoursSansAlcool = (Math.round(ratioJoursSansAlcool * 100) / 100);
 }
 
+/**
+ *
+ * Fait le calcul pour déterminer le nombre de jours où le nb de consommations de l'utilisateur cette journée là
+ * dépassse la recommendation d'éduc'alcool
+ * @param {*} leTableau  Le tableau de consommations remplis lors du chargement de la page.
+ */
 function calculRatioJoursExces (leTableau) {
   let nbJoursExces = 0
   for (let i = 0; i < consommations.length; i++) {
@@ -107,6 +144,10 @@ function calculRatioJoursExces (leTableau) {
   resultats.ratioJoursExces = (Math.round(ratioJoursExces * 100) / 100);
 }
 
+/**
+ *
+ * Affiche les résultats
+ */
 function affichageResultats () {
   resultatsAlcool.getElementsByTagName('p')[0].innerHTML = `${resultats.nom}, ${resultats.prenom}<br/>
   Âge : ${resultats.age} ans<br/>

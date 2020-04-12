@@ -41,11 +41,20 @@ resultats = {
 
 afficherResultats();
 
+/**
+ * renvoie la somme d'un tableau
+ * @param {*} leTableau Le tableau dont on veut la somme
+ * @returns Le tableau qui a été envoyer en paramètre
+ */
 function somme (leTableau) {
   let somme = (leTableau.reduce((a, b) => a + b, 0));
   return somme;
 }
 
+/**
+ *
+ *Affiche les résultats
+ */
 function afficherResultats () {
   document.getElementById('nbJours').innerHTML = `nombre de jours: ${nbJour}`;
   document.getElementById('resultatsFruitsETLegumes').innerHTML = `Moyenne de fruit(s) et légume(s) par jour : ${resultats.moyenneFruitsLegumes.toFixed(2)}<br />
